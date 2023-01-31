@@ -97,7 +97,7 @@ class TransactionSet:
 
 		datum = {
             'status_code': claim.claim.status,
-			'marker': claim.claim.marker,
+			'NPI': claim.claim.marker,
 			'patient': claim.patient.name,
             
             'patient_id': claim.patient.identification_code,
@@ -110,6 +110,8 @@ class TransactionSet:
 			'charge_amount': service.service.charge_amount,
 			'allowed_amount': service.allowed_amount,
 			'paid_amount': service.service.paid_amount,
+            
+            "Billing Provider NPI": payee.organization.billingNPI,
 			'payer': payer.organization.name,
 			'start_date': start_date,
 			'end_date': end_date,
