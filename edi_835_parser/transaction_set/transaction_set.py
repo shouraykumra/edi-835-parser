@@ -51,6 +51,7 @@ class TransactionSet:
 				datum = TransactionSet.serialize_service(
 					self.financial_information,
 					self.payer,
+                    self.payee,
 					claim,
 					service
 				)
@@ -78,6 +79,7 @@ class TransactionSet:
 	def serialize_service(
 			financial_information: FinancialInformationSegment,
 			payer: OrganizationLoop,
+            payee: OrganizationLoop,
 			claim: ClaimLoop,
 			service: ServiceLoop,
 	) -> dict:
