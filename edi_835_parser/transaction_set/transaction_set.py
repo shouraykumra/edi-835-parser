@@ -101,7 +101,7 @@ class TransactionSet:
             'status_code': claim.claim.status,
 			'NPI': claim.claim.marker,
 			'patient': claim.patient.name,
-            
+            'revenue_code': claim.claim.revenue_code,
             'patient_id': claim.patient.identification_code,
 			'code': service.service.code,
 			'modifier': service.service.modifier,
@@ -113,6 +113,7 @@ class TransactionSet:
 			'allowed_amount': service.allowed_amount,
 			'paid_amount': service.service.paid_amount,
             
+            "payee": payee.organization.name,
             "Billing Provider NPI": payee.organization.billingNPI,
 			'payer': payer.organization.name,
 			'start_date': start_date,

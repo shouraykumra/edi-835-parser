@@ -1,7 +1,7 @@
 from edi_835_parser.elements.identifier import Identifier
 from edi_835_parser.elements.claim_status import ClaimStatus
 from edi_835_parser.elements.dollars import Dollars
-from edi_835_parser.segments.utilities import split_segment
+from edi_835_parser.segments.utilities import split_segment, get_element
 
 
 class Claim:
@@ -21,6 +21,7 @@ class Claim:
 		self.status = segment[2]
 		self.charge_amount = segment[3]
 		self.paid_amount = segment[4]
+        self.revenue_code = get_element(segment, 6)
 
 	def __repr__(self):
 		return '\n'.join(str(item) for item in self.__dict__.items())
